@@ -3,9 +3,10 @@
 # Data from https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-resultats-des-tests-virologiques-covid-19/
 #
 
+import os
 import plotly.express as px
 import pandas
-from time import strftime, localtime
+import time
 
 regions = {
   1: 'Guadeloupe',
@@ -31,7 +32,9 @@ regions = {
   94: 'Corse',
 }
 
-now = strftime("%Y-%m-%d %H:%M", localtime())
+os.environ['TZ'] = 'Europe/Paris'
+time.tzset()
+now = time.strftime("%Y-%m-%d %H:%M %Z", time.localtime())
 
 # Regions
 data = pandas.read_csv('https://www.data.gouv.fr/fr/datasets/r/001aca18-df6a-45c8-89e6-f82d689e6c01', sep=';')

@@ -34,7 +34,7 @@ jobs:
     - name: Push to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.1.0
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
       with:
         target_branch: gh-pages
         commit_message: "Update for ${{ steps.date.outputs.date }}"  

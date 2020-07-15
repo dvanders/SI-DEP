@@ -1,4 +1,4 @@
-name: Update statistics
+name: Update plots
 
 on:
   push:

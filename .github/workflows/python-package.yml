@@ -32,6 +32,8 @@ jobs:
         python3 sidep.py
     - name: Push to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.1.0
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # GitHub repository where assets will be deployed (default current)
         repo: current

@@ -30,14 +30,14 @@ jobs:
     - name: Run the SI-DEP update tool
       run: |
         ./sidep.py
-        
+
     - name: Push to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.1.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         target_branch: gh-pages
-        commit_message: "Update for ${{ steps.date.outputs.date }}"  
+        commit_message: "Update for ${{ steps.date.outputs.date }}"
         allow_empty_commit: false
         build_dir: build
         jekyll: false

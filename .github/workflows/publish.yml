@@ -11,18 +11,14 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8]
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.8'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -30,9 +26,11 @@ jobs:
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-    - name: Run the update tool
+
+    - name: Run the SI-DEP update tool
       run: |
-        python3 sidep.py
+        ./sidep.py
+        
     - name: Push to GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.1.0
       env:

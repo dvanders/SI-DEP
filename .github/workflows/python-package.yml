@@ -27,8 +27,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2
     - name: Run the update tool
       run: |
-        ./sidep.py
+        python3 sidep.py
+    - name: Push to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.1.0
+      with:
+        # GitHub repository where assets will be deployed (default current)
+        repo: current
+        target_branch: gh-pages 
+        allow_empty_commit: false
+        build_dir: build
+        # Allow Jekyll to build your site
+        jekyll: false

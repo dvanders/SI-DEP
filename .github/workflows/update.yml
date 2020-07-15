@@ -1,0 +1,26 @@
+name: Update SI-DEP Plots
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        apt install python3-plotly python3-pandas
+    - name: Build new plots
+      run: |
+        ./sidepy.py
+        DATE=$(date)
+        git commit -am "Update for ${DATE}"
+        git push

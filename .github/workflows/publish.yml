@@ -35,10 +35,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        # GitHub repository where assets will be deployed (default current)
-        repo: current
-        target_branch: gh-pages 
+        repo: dvanders/dvanders.github.io
         allow_empty_commit: false
         build_dir: build
-        # Allow Jekyll to build your site
         jekyll: false

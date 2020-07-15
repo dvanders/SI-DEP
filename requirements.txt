@@ -1,2 +1,2 @@
-plotly-express
-pandas
+pandas==1.0.5
+plotly==4.8.2

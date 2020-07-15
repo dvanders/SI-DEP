@@ -42,7 +42,7 @@ fig = px.bar(everyone, x='jour', y='P', template='ggplot2', color='reg',
              title='France Regional SI-DEP Positive COVID-19 Tests as of %s<br><sub>Last updated %s by <a href="https://github.com/dvanders/SI-DEP">https://github.com/dvanders/SI-DEP</a></sub>' % (date, now),
              color_discrete_sequence=px.colors.qualitative.Dark24,
              labels={'P':'Positive Tests', 'jour':'Date'},)
-fig.write_html(file='index.html')
+fig.write_html(file='./build/index.html')
 
 # All of France
 data = pandas.read_csv('https://www.data.gouv.fr/fr/datasets/r/dd0de5d9-b5a5-4503-930a-7b08dc0adc7c', sep=';')
@@ -51,4 +51,4 @@ date = everyone.tail(1)['jour'].array[0]
 fig = px.bar(everyone, x='jour', y='P', template='ggplot2',
              title='France SI-DEP Positive COVID-19 Tests as of %s<br><sub>Last updated %s by <a href="https://github.com/dvanders/SI-DEP">https://github.com/dvanders/SI-DEP</a></sub>' % (date, now),
              labels={'P':'Positive Tests', 'jour':'Date'},)
-fig.write_html(file='national.html')
+fig.write_html(file='./build/national.html')

@@ -36,6 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         repo: dvanders/dvanders.github.io
+        target_branch: gh-pages
         allow_empty_commit: false
         build_dir: build
         jekyll: false

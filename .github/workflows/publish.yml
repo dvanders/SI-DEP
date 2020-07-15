@@ -38,3 +38,4 @@ jobs:
         allow_empty_commit: false
         build_dir: build
         jekyll: false
+        keep_history: true

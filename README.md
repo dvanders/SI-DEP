@@ -6,6 +6,11 @@ Updated daily at ~20h15 via [Github Scheduled actions](https://docs.github.com/e
 
 ## Dependencies
 
+ * python3
+ * pip
+ 
+Other dependencies can be installed via: 
+
 ```
-sudo apt install python3-plotly python3-pandas
+pip install -r requirements.txt
 ```

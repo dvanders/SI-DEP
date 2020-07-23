@@ -36,7 +36,7 @@ regions = {
 os.environ['TZ'] = 'Europe/Paris'
 time.tzset()
 now = time.strftime("%Y-%m-%d %H:%M %Z", time.localtime())
-sub = '<sub>Updated %s | <a href="https://github.com/dvanders/SI-DEP">Code</a> | <a href="https://dvanders.github.io/SI-DEP/national.html" target="_top">National</a> |  <a href="https://dvanders.github.io/SI-DEP/index.html" target="_top">Regional</a> | <a href="https://dvanders.github.io/SI-DEP/dep.html" target="_top">Departmental</a></sub>' % now
+sub = '<sub>Updated %s | <a href="https://github.com/dvanders/SI-DEP">Code</a> | <a href="https://dvanders.github.io/SI-DEP/national.html" target="_top">National</a> | <a href="https://dvanders.github.io/SI-DEP/index.html" target="_top">Regional</a> | <a href="https://dvanders.github.io/SI-DEP/dep.html" target="_top">Departmental</a></sub>' % now
 
 # Regions
 data = pandas.read_csv('https://www.data.gouv.fr/fr/datasets/r/001aca18-df6a-45c8-89e6-f82d689e6c01', sep=';')

@@ -55,7 +55,7 @@ for reg in set(everyone['reg']):
   everyone['P_7'][_reg] = everyone[_reg].rolling(7).mean()['P']
 
 fig = px.bar(everyone.dropna(), x='jour', y='P_7', template='ggplot2', color='reg',
-             title='France Regional SI-DEP Positive COVID-19 Tests as of %s<br>%s (7d Moving Average)' % (date, sub),
+             title='France Regional SI-DEP Positive COVID-19 Tests as of %s (7d Moving Average)<br>%s' % (date, sub),
              color_discrete_sequence=px.colors.qualitative.Dark24,
              labels={'P':'Positive Tests', 'jour':'Date'},)
 fig.write_html(file='./build/reg7.html')
@@ -76,7 +76,7 @@ for dep in set(everyone['dep']):
   everyone['P_7'][_dep] = everyone[_dep].rolling(7).mean()['P']
 
 fig = px.bar(everyone.dropna(), x='jour', y='P_7', template='ggplot2', color='dep',
-             title='France Departmental SI-DEP Positive COVID-19 Tests as of %s<br>%s (7d Moving Average)' % (date, sub),
+             title='France Departmental SI-DEP Positive COVID-19 Tests as of %s (7d Moving Average)<br>%s' % (date, sub),
              color_discrete_sequence=px.colors.qualitative.Dark24,
              labels={'P':'Positive Tests', 'jour':'Date'},)
 fig.write_html(file='./build/dep7.html')
@@ -93,6 +93,6 @@ fig.write_html(file='./build/national.html')
 everyone['P_7'] = everyone.rolling(7).mean()['P']
 
 fig = px.bar(everyone.dropna(), x='jour', y='P_7', template='ggplot2',
-             title='France National SI-DEP Positive COVID-19 Tests as of %s<br>%s (7d Moving Average)' % (date, sub),
+             title='France National SI-DEP Positive COVID-19 Tests as of %s (7d Moving Average)<br>%s' % (date, sub),
              labels={'P':'Positive Tests', 'jour':'Date'},)
 fig.write_html(file='./build/national7.html')

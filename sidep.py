@@ -44,7 +44,7 @@ data['reg'].replace(regions, inplace=True)
 everyone = data[data['cl_age90'] == 0]
 date = everyone.tail(1)['jour'].array[0]
 fig = px.bar(everyone, x='jour', y='P', template='ggplot2', color='reg',
-             title='France Regional SI-DEP Positive COVID-19 Tests as of %s<br>%s' % (date, sub),
+             title='France Régional SI-DEP Tests COVID-19 positifs au %s<br>%s' % (date, sub),
              color_discrete_sequence=px.colors.qualitative.Dark24,
              labels={'P':'Positive Tests', 'jour':'Date'},)
 fig.write_html(file='./build/index.html')
